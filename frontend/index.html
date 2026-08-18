@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Халява от Илюшки</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <div class="bg-glow bg-glow-a"></div>
+    <div class="bg-glow bg-glow-b"></div>
+    <div class="grid"></div>
+
+    <header class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Шарики от Илюшки</span>
+        <h1>Халява от Илюшки</h1>
+        <div class="hero-actions">
+          <button class="primary" data-open-tab="admin" data-admin-only="1">Создать розыгрыш</button>
+          <button class="secondary" data-open-tab="test" data-admin-only="1">Тест розыгрыш</button>
+          <button class="secondary" id="clear-active-raffles" data-admin-only="1">Очистить активные</button>
+        </div>
+      </div>
+
+      <div class="hero-card glass">
+        <div class="hero-card-top">
+          <span>ОБЗОР</span>
+          <strong id="hero-pool">0 USDT</strong>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <small>Розыгрышей</small>
+            <b id="hero-raffles">0</b>
+          </div>
+          <div>
+            <small>Участников</small>
+            <b id="hero-players">0</b>
+          </div>
+          <div>
+            <small>Победителей</small>
+            <b id="hero-invites">0</b>
+          </div>
+        </div>
+        <div class="hero-pulse">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar glass">
+        <button class="nav-btn" data-tab="admin" data-admin-only="1">Админ</button>
+        <button class="nav-btn" data-tab="test" data-admin-only="1">Тест розыгрыш</button>
+        <button class="nav-btn active" data-tab="participant">Вход</button>
+        <button class="nav-btn" data-tab="race" data-admin-only="1">Гонка шаров</button>
+      </aside>
+
+      <section class="main-content">
+        <section class="panel glass tab-panel" data-panel="admin" data-admin-only="1">
+          <div class="panel-head">
+            <div>
+              <span>Управление</span>
+              <h2>Платный розыгрыш</h2>
+            </div>
+            <div class="tag">CryptoBot</div>
+          </div>
+
+          <form id="admin-form" class="raffle-form">
+            <label>
+              <span>Название розыгрыша</span>
+              <input name="title" type="text" placeholder="Шарики от Илюшки" required />
+            </label>
+            <label>
+              <span>Описание</span>
+              <textarea name="description" rows="3" placeholder="Платный розыгрыш с оплатой через CryptoBot"></textarea>
+            </label>
+            <div class="split">
+              <label>
+                <span>Сумма розыгрыша</span>
+                <input name="prizePool" type="number" min="0.1" step="0.1" placeholder="10" required />
+              </label>
+              <label>
+                <span>Валюта</span>
+                <input name="currency" type="text" value="USDT" required />
+              </label>
+            </div>
+            <div class="split">
+              <label>
+                <span>Количество победителей</span>
+                <input name="winnersCount" type="number" min="1" value="3" required />
+              </label>
+              <label>
+                <span>Длительность розыгрыша</span>
+                <select name="durationMinutes" id="duration-minutes" required></select>
+              </label>
+            </div>
+            <div id="draw-preview" class="result-card">
+              Розыгрыш завершится автоматически через выбранное время.
+            </div>
+            <label>
+              <span>Канал для публикации</span>
+              <input name="channel" type="text" placeholder="@your_channel" />
+            </label>
+            <label>
+              <span>Имя админа</span>
+              <input name="adminName" type="text" placeholder="Илюшка" />
+            </label>
+            <button type="submit" class="primary wide">Создать платный розыгрыш</button>
+          </form>
+
+          <div id="admin-result" class="result-card hidden"></div>
+        </section>
+
+        <section class="panel glass tab-panel" data-panel="test" data-admin-only="1">
+          <div class="panel-head">
+            <div>
+              <span>Управление</span>
+              <h2>Тест розыгрыш</h2>
+            </div>
+            <div class="tag">Без CryptoBot</div>
+          </div>
+
+          <form id="test-admin-form" class="raffle-form">
+            <label>
+              <span>Название розыгрыша</span>
+              <input name="title" type="text" placeholder="Тестовые шарики от Илюшки" required />
+            </label>
+            <label>
+              <span>Описание</span>
+              <textarea name="description" rows="3" placeholder="Тестовый розыгрыш без оплаты через CryptoBot"></textarea>
+            </label>
+            <div class="split">
+              <label>
+                <span>Сумма розыгрыша</span>
+                <input name="prizePool" type="number" min="0.1" step="0.1" placeholder="10" required />
+              </label>
+              <label>
+                <span>Валюта</span>
+                <input name="currency" type="text" value="USDT" required />
+              </label>
+            </div>
+            <div class="split">
+              <label>
+                <span>Количество победителей</span>
+                <input name="winnersCount" type="number" min="1" value="3" required />
+              </label>
+              <label>
+                <span>Длительность розыгрыша</span>
+                <select name="durationMinutes" id="test-duration-minutes" required></select>
+              </label>
+            </div>
+            <div id="test-draw-preview" class="result-card">
+              Тестовый розыгрыш завершится автоматически через выбранное время.
+            </div>
+            <label>
+              <span>Канал для публикации</span>
+              <input name="channel" type="text" placeholder="@your_channel" />
+            </label>
+            <label>
+              <span>Имя админа</span>
+              <input name="adminName" type="text" placeholder="Илюшка" />
+            </label>
+            <button type="submit" class="primary wide">Создать тест розыгрыш</button>
+          </form>
+
+          <div id="test-admin-result" class="result-card hidden"></div>
+        </section>
+
+        <section class="panel glass tab-panel" data-panel="participant">
+          <div class="panel-head">
+            <div>
+              <span>Розыгрыш</span>
+              <h2>Вход в розыгрыш</h2>
+            </div>
+            <div class="tag">Только по ссылке</div>
+          </div>
+
+          <div class="participant-grid">
+            <div class="participant-side">
+              <div id="participant-empty-state" class="empty-state-card hidden">
+                НЕТУ ИГР
+                <small>Скоро появятся</small>
+              </div>
+              <label>
+                <span>Розыгрыш</span>
+                <select id="participant-raffle"></select>
+              </label>
+              <label>
+                <span>Telegram ID</span>
+                <input id="participant-telegram-id" type="text" placeholder="123456789" />
+              </label>
+              <label>
+                <span>Username</span>
+                <input id="participant-username" type="text" placeholder="ilyushka_player" />
+              </label>
+              <label>
+                <span>Имя игрока</span>
+                <input id="participant-display-name" type="text" placeholder="Игрок" />
+              </label>
+              <label>
+              <button id="join-button" class="primary wide">Участвовать</button>
+              <div id="participant-result" class="result-card hidden"></div>
+              <div id="claim-prize-panel" class="result-card hidden"></div>
+            </div>
+
+            <div class="leaderboard-card" id="participant-leaderboard-card" data-admin-only="1">
+              <div class="leaderboard-head">
+                <h3>Участники</h3>
+                <button id="refresh-board" class="secondary">Обновить</button>
+              </div>
+              <div id="leaderboard-list" class="leaderboard-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel glass tab-panel" data-panel="race">
+          <div class="panel-head">
+            <div>
+              <span>Финал</span>
+              <h2>Гонка шаров</h2>
+            </div>
+            <div class="tag">Шарики с никами</div>
+          </div>
+
+          <div class="race-toolbar">
+            <label>
+              <span>Розыгрыш</span>
+              <select id="race-raffle"></select>
+            </label>
+            <button id="load-race" class="secondary">Загрузить сцену</button>
+            <button id="fullscreen-race" class="secondary">На весь экран</button>
+            <button id="finalize-button" class="primary" data-admin-only="1">Финализировать</button>
+          </div>
+
+          <div class="race-stage" id="race-stage">
+            <canvas id="race-canvas" width="1080" height="680"></canvas>
+            <div class="race-overlay">
+              <div class="race-title" id="race-title">Ждем финальную сцену</div>
+              <div class="race-meta" id="race-meta">Создай и запусти розыгрыш, затем добавь участников</div>
+            </div>
+            <div id="race-results-overlay" class="race-results-overlay hidden"></div>
+          </div>
+
+          <div id="winners-panel" class="winners-panel"></div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
