@@ -1,0 +1,9 @@
+{
+  "name": "neondrop-raffle-miniapp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Telegram Mini App for neon raffles with referrals, mock CryptoBot flow, and animated race finale.",
+  "scripts": {
+    "start": "node backend/server.js"
+  }
+}
