@@ -1,0 +1,252 @@
+{
+  "raffles": [
+    {
+      "id": "b2eb743d-da88-41cd-93ea-21a11f3b49d9",
+      "slug": "23a2b69f",
+      "title": "Smoke Raffle",
+      "description": "test",
+      "channel": "",
+      "prizePool": 5,
+      "currency": "USDT",
+      "winnersCount": 1,
+      "prizePerWinner": 5,
+      "drawAt": "2026-08-18T01:22:36.603Z",
+      "createdAt": "2026-08-18T01:22:37.618Z",
+      "status": "draft",
+      "adminName": "Admin",
+      "participants": [],
+      "winners": [],
+      "referrals": [],
+      "crypto": null,
+      "race": null,
+      "settlement": {
+        "status": "pending",
+        "lastProcessedAt": null,
+        "notificationSummary": null
+      }
+    },
+    {
+      "id": "c3bd925d-08bb-469e-bc5f-26f2bee5a1a3",
+      "slug": "d1024e5e",
+      "title": "Smoke Raffle",
+      "description": "test",
+      "channel": "",
+      "prizePool": 5,
+      "currency": "USDT",
+      "winnersCount": 1,
+      "prizePerWinner": 5,
+      "drawAt": "2026-08-18T01:24:06.063Z",
+      "createdAt": "2026-08-18T01:24:07.078Z",
+      "status": "completed",
+      "adminName": "Admin",
+      "participants": [
+        {
+          "id": "d9a2e27d-af9d-4a2e-bd95-cf657170285d",
+          "telegramId": "42",
+          "username": "tester",
+          "displayName": "Tester",
+          "joinedAt": "2026-08-18T01:24:07.114Z",
+          "refCode": "ref_88b6c9",
+          "invitedBy": null,
+          "invitesCount": 0,
+          "weight": 1
+        }
+      ],
+      "winners": [
+        {
+          "place": 1,
+          "participantId": "d9a2e27d-af9d-4a2e-bd95-cf657170285d",
+          "telegramId": "42",
+          "username": "tester",
+          "displayName": "Tester",
+          "prize": 5,
+          "payout": {
+            "status": "skipped",
+            "asset": "USDT",
+            "transferId": null,
+            "spendId": "raffle_c3bd925d-08bb-469e-bc5f-26f2bee5a1a3_place_1",
+            "error": "auto_payouts_disabled",
+            "processedAt": "2026-08-18T01:24:07.120Z"
+          },
+          "notification": {
+            "status": "pending",
+            "messageId": null,
+            "error": null,
+            "sentAt": null
+          }
+        }
+      ],
+      "referrals": [],
+      "crypto": {
+        "paymentId": "pay_dd4e6fa0",
+        "invoiceId": null,
+        "invoiceUrl": "https://t.me/CryptoBot?start=invoice-pay_dd4e6fa0",
+        "invoiceHash": null,
+        "status": "paid",
+        "mode": "mock"
+      },
+      "race": {
+        "raffleId": "c3bd925d-08bb-469e-bc5f-26f2bee5a1a3",
+        "title": "Smoke Raffle",
+        "winnersCount": 1,
+        "prizePerWinner": 5,
+        "racers": [
+          {
+            "id": "d9a2e27d-af9d-4a2e-bd95-cf657170285d",
+            "displayName": "Tester",
+            "invitesCount": 0,
+            "chanceWeight": 1,
+            "isWinner": true,
+            "finishPlace": 1,
+            "lane": 0,
+            "color": "#52f2ff",
+            "seed": 1551815974,
+            "duration": 6200
+          }
+        ],
+        "obstacles": [
+          {
+            "x": 110,
+            "y": 100,
+            "r": 10
+          },
+          {
+            "x": 200,
+            "y": 100,
+            "r": 11
+          },
+          {
+            "x": 290,
+            "y": 100,
+            "r": 12
+          },
+          {
+            "x": 380,
+            "y": 100,
+            "r": 10
+          },
+          {
+            "x": 150,
+            "y": 172,
+            "r": 11
+          },
+          {
+            "x": 240,
+            "y": 172,
+            "r": 12
+          },
+          {
+            "x": 330,
+            "y": 172,
+            "r": 10
+          },
+          {
+            "x": 420,
+            "y": 172,
+            "r": 11
+          },
+          {
+            "x": 510,
+            "y": 172,
+            "r": 12
+          },
+          {
+            "x": 110,
+            "y": 244,
+            "r": 12
+          },
+          {
+            "x": 200,
+            "y": 244,
+            "r": 10
+          },
+          {
+            "x": 290,
+            "y": 244,
+            "r": 11
+          },
+          {
+            "x": 380,
+            "y": 244,
+            "r": 12
+          },
+          {
+            "x": 150,
+            "y": 316,
+            "r": 10
+          },
+          {
+            "x": 240,
+            "y": 316,
+            "r": 11
+          },
+          {
+            "x": 330,
+            "y": 316,
+            "r": 12
+          },
+          {
+            "x": 420,
+            "y": 316,
+            "r": 10
+          },
+          {
+            "x": 510,
+            "y": 316,
+            "r": 11
+          },
+          {
+            "x": 110,
+            "y": 388,
+            "r": 11
+          },
+          {
+            "x": 200,
+            "y": 388,
+            "r": 12
+          },
+          {
+            "x": 290,
+            "y": 388,
+            "r": 10
+          },
+          {
+            "x": 380,
+            "y": 388,
+            "r": 11
+          }
+        ],
+        "generatedAt": "2026-08-18T01:24:07.119Z"
+      },
+      "settlement": {
+        "status": "completed",
+        "lastProcessedAt": "2026-08-18T01:24:07.120Z",
+        "notificationSummary": {
+          "payoutsCompleted": 0,
+          "notificationsSent": 0
+        },
+        "adminNotifiedAt": "2026-08-18T01:24:07.120Z"
+      },
+      "fundedAt": "2026-08-18T01:24:07.097Z",
+      "completedAt": "2026-08-18T01:24:07.118Z"
+    }
+  ],
+  "payments": [
+    {
+      "id": "pay_dd4e6fa0",
+      "raffleId": "c3bd925d-08bb-469e-bc5f-26f2bee5a1a3",
+      "amount": 5,
+      "currency": "USDT",
+      "status": "paid",
+      "createdAt": "2026-08-18T01:24:07.097Z",
+      "mode": "mock",
+      "invoiceUrl": "https://t.me/CryptoBot?start=invoice-pay_dd4e6fa0",
+      "providerInvoiceId": null,
+      "providerInvoiceHash": null,
+      "payload": "{\"type\":\"raffle_payment\",\"raffleId\":\"c3bd925d-08bb-469e-bc5f-26f2bee5a1a3\",\"paymentId\":\"pay_dd4e6fa0\"}",
+      "paidAt": "2026-08-18T01:24:07.097Z",
+      "confirmedBy": "auto_mock"
+    }
+  ],
+  "webhooks": []
+}
